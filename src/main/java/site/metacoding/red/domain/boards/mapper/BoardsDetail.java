@@ -1,6 +1,8 @@
 package site.metacoding.red.domain.boards.mapper;
 
-import java.security.Timestamp;
+
+
+import java.sql.Timestamp;
 
 import lombok.Getter;
 import lombok.Setter;
