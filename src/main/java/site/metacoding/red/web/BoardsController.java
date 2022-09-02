@@ -25,6 +25,7 @@ public class BoardsController {
 	// 매개변수 있으면 알아서 주입
 	// new가 될때 final이 있으면 무조건 초기화를 해준다
 	
+	
 	@PostMapping("/boards")
 	public RespDto<?> insert(WriteDto writeDto){ // x-www-머시기(key=value)
 		boardsDao.insert(writeDto);
@@ -33,12 +34,12 @@ public class BoardsController {
 	
 	@GetMapping("/boards")
 	public RespDto<?> getBoards(){
-		return new RespDto<>(1,"글 조회 성공", boardsDao.findAll());
+		return new RespDto<>(1,"글전체조회 성공", boardsDao.findAll());
 	}
 	
 	@GetMapping("/boards/{id}")
 	public RespDto<?> getBoardsList(@PathVariable Integer id){
-		return new RespDto<>(1,"글 한건 조회 성공", boardsDao.findById(id));
+		return new RespDto<>(1,"글 조회 성공", boardsDao.findByIdtoDetail(id));
 	}
 	
 	@PutMapping("/boards/{id}")
